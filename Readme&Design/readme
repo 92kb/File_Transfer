@@ -1,0 +1,5 @@
+kartik bennet  B00719819
+
+compiling client gcc -o c client.c
+
+compiling server gcc -o s server.c
