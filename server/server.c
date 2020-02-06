@@ -90,19 +90,8 @@ int main(int argc, char *argv[])
        else
        total_frame  = ((fr_i.size) / max_data) + 1; //grtting the total number of frames to recieve
        
-      
-     
-   //   printf("%dtot\n",total_frame);
-       
-     
-    }
-
-  
-
-
   // output file pointer
   FILE * outputFile;
-  
   
   //outputFile = fopen("joke.txt", "wb");
    int seq_rec = -1;
@@ -128,32 +117,8 @@ int main(int argc, char *argv[])
            // sending acknowledgement packet
            sendto(socketFD, &ack,sizeof(int), 0, (struct sockaddr*)& their_addr, sizeof(struct sockaddr_in));
      
-           
-           /*for(int i =0;fr.data[i]!='\0';i++)
-           {
-             fputc(fr.data[i],outputFile);
-           
-            } */
-          /*  char ch;
-    
-            if(fr.seq_no == total_frame-1)
-            {
-               printf("reach last\n");
-               int rem = fr_i.size % max_data ;
-               memcpy(outputFile,fr.data,rem);
-               fclose(outputFile); // closing file
-               break;
-             }
-             else
-             {
-               //printf("%d\n",fr.seq_no);
-               memcpy(outputFile,fr.data,max_data);
-               for(int k=0;k<max_data;k++)
-               ch = getc(outputFile);
-      
-             }   */
-          
-            
+
+             
             if(fr.seq_no == total_frame-1)
             {
               // printf("reach last\n");
@@ -176,33 +141,7 @@ int main(int argc, char *argv[])
             seq_rec++;
            
          } 
-        
-      /*  if(fr.seq_no == total_frame-1)
-            {
-               
-               int rem = fr_i.size % max_data ;
-               char buff1[rem];
-               memcpy(buff1,fr.data,rem);
-               fwrite (buff1, sizeof(char), rem, outputFile);
-               fclose(outputFile); // closing file
-               break;
-             }
-             else
-             {
-               //printf("%d\n",fr.seq_no);
-               char buff2[max_data];
-               memcpy(buff2,fr.data,max_data);
-               fwrite (buff2, sizeof(char), max_data, outputFile);
-               
-      
-             }   */
-      
-     
-     
-    } 
-   
-
-
- }
+      } 
+    }
 
 
