@@ -24,9 +24,6 @@
 
 int main(int argc, char *argv[])
 {
-  
-  
-  
   int n;
   int total_frame ;// total frames
  
